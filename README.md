@@ -45,7 +45,7 @@ Installation needs Home Assistant OS with Supervisor, Core 2026.11 or newer, and
 
 ## Tested
 
-The previous beta passed AMD64/ARM64 builds, ARM64 startup under emulation, and real Supervisor installation, upgrade, rollback and full-backup restore on an isolated development PC. Journal records and photo bytes survived those tests. The application code in this release is unchanged apart from release identification and distribution notices. Each published image runs the 19 add-on checks; physical-device and microphone tests are separate.
+The public beta was downloaded and installed through the real Home Assistant Supervisor on an isolated development PC. Connector validation, restart and release detection passed; existing journal records and photo bytes were preserved, and dosing stayed locked. Anonymous AMD64/ARM64 downloads were verified, and the published ARM64 payload ran under emulation. Earlier beta tests also covered rollback and full-backup restore. All 19 add-on checks passed before publication. Physical-device and microphone tests are separate.
 
 ## Get help
 
