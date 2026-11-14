@@ -1,3 +1,12 @@
+# 0.21.2-beta.2
+
+- Put nutrient and pump setup, calibration, reservoir links and connection options in Reservoirs & dosing → Settings. Keep readings, nutrient sliders, Veg/Flower presets and dosing controls on the dashboard.
+- Support custom nutrient products, any number of pumps, recipe inclusion, ordering and removal/restoration without erasing delivery history. Product or connection changes require their relevant amounts and calibration to be reviewed.
+- Add Sonoff and Broadlink connection pages, a model-based mini-split catalogue and guided IR learning with controller-style remotes. IR requests do not confirm the appliance's actual state.
+- Add Govee H5054/compatible leak reporting through supported MQTT/RF receivers, room/planter links and selectable notification recipients. Compatible receiver hardware is required.
+- Improve camera assignment and dated checks, with shared photo/camera review context. Camera transport and local image-analysis workers remain separate dependencies.
+- Preserve the default dosing lock and existing records. Editing setup leaves automatic dosing off.
+
 # 0.21.2-beta.1
 
 - Add optional personal OneDrive storage for journal records, photos and complete sensor history, with a bounded local photo/readings cache and retained unsent changes.

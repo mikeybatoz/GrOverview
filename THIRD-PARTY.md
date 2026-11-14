@@ -11,3 +11,5 @@ The application includes its existing attribution and source links. The release 
 - PlantVillage, PlantNet and LLM Vision references in the UI do not mean their datasets, models or services are shipped in this add-on. The existing Windows AI worker is excluded.
 
 Original GrOverview material is distributed under the Personal and Internal Use License in LICENSE. It does not replace or restrict the licenses of third-party materials. The Python/Alpine container base and its operating-system packages retain their upstream licenses and notices; see https://github.com/docker-library/python and https://pkgs.alpinelinux.org/ for their sources and package information.
+
+- SmartIR climate catalogue (MIT, copyright 2019 Vassilis Panos): make/model metadata is pinned to the source revision recorded in `minisplit_catalog.json`. Selected Broadlink IR tables are downloaded on demand and cached locally. The MIT notice is retained in `notices/SMARTIR-LICENSE.txt`. Source: https://github.com/smartHomeHub/SmartIR. GrOverview does not require the SmartIR integration for these native profiles.
