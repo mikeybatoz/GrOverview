@@ -59,7 +59,7 @@ Your existing journal, photos, sensor history, room/bed links, device settings, 
 
 ## Tested
 
-The current release passes 409 journal tests and 48 add-on tests (cloud cases overlap), including scheduled cloud-sync dispatch and settings preservation through updates/rollback. The published beta.1 → beta.2 update was exercised through Home Assistant on an isolated PC: 35 journal events, 1,008 readings, 16 photo hashes, room/bed links, pump settings, Veg/Flower recipes and OneDrive preferences matched afterward. Earlier releases passed full-backup restore and OneDrive recovery into an empty journal. These tests do not establish compatibility with every physical device. AMD64 and ARM64 images are provided.
+The current release passes 409 journal tests and 48 add-on tests (cloud cases overlap), including scheduled cloud-sync dispatch and settings preservation through updates/rollback. Published beta.1 → beta.2 → beta.3 updates were exercised through Home Assistant on an isolated PC: 35 journal events, 1,008 readings, 16 photo hashes, room/bed links, pump settings, Veg/Flower recipes and OneDrive preferences matched afterward. Earlier releases passed full-backup restore and OneDrive recovery into an empty journal. These tests do not establish compatibility with every physical device. AMD64 and ARM64 images are provided.
 
 ## Get help
 
