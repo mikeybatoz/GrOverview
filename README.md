@@ -8,7 +8,7 @@ Journal a plant once. Connect it to its room and planter. Keep photos, care even
 
 [![Add GrOverview to Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fmikeybatoz%2FGrOverview)
 
-**Experimental beta · 0.21.2-beta.2 · ARM64 and AMD64 · Home Assistant OS**
+**Experimental beta · 0.21.2-beta.3 · ARM64 and AMD64 · Home Assistant OS**
 
 This is the official installer and support repository. Application development is private. Prebuilt images are downloaded from GitHub Container Registry; Home Assistant does not compile the application on your Pi.
 
@@ -21,6 +21,15 @@ This is the official installer and support repository. Application development i
 5. Leave **dosing_locked** enabled. Add your rooms, link sensors and assign plants to their planters.
 
 Installation needs Home Assistant OS with Supervisor, Core 2026.11 or newer, and an administrator account. Home Assistant Container alone has no add-on store. Read [setup, backup and migration details](growerview/DOCS.md) before upgrading an existing installation.
+
+## Update an existing installation
+
+1. Keep dosing locked off and make a full backup including **Home Assistant and GrOverview**.
+2. Open **Settings → Apps → GrOverview → Update** (or **Add-ons** on older versions). If needed, select **Check for updates** on the Apps page.
+3. Select **Open Web UI → Update connector & check configuration**.
+4. After the check passes, select **Restart Home Assistant** and wait for the journal to reopen.
+
+Your existing journal, photos, sensor history, room/bed links, device settings, pump calibrations and saved recipes stay in place. Do not uninstall or create a new journal. App auto-updates still require the connector/restart step. OneDrive journals retain their account/library; a fully offline backup requires downloading the cloud journal first. See [update and backup details](growerview/DOCS.md#updating-without-starting-over).
 
 ## What is included
 
@@ -50,7 +59,7 @@ Installation needs Home Assistant OS with Supervisor, Core 2026.11 or newer, and
 
 ## Tested
 
-The current release passes 408 journal tests and 46 add-on tests (cloud cases overlap), payload integrity checks and JavaScript syntax checks. The simplified dosing dashboard and settings were also verified in the browser with dosing off. Earlier releases passed connector validation, restart, journal preservation, rollback and full-backup restore under a real Home Assistant Supervisor on an isolated development PC. OneDrive testing included personal-account sign-in, verified upload/readback of 1,008 readings and 16 photos, cache eviction, recovery into an empty journal and return to local storage. These tests do not establish compatibility with every physical device. AMD64 and ARM64 images are provided.
+The current release passes 409 journal tests and 48 add-on tests (cloud cases overlap), including scheduled cloud-sync dispatch and settings preservation through updates/rollback. The published beta.1 → beta.2 update was exercised through Home Assistant on an isolated PC: 35 journal events, 1,008 readings, 16 photo hashes, room/bed links, pump settings, Veg/Flower recipes and OneDrive preferences matched afterward. Earlier releases passed full-backup restore and OneDrive recovery into an empty journal. These tests do not establish compatibility with every physical device. AMD64 and ARM64 images are provided.
 
 ## Get help
 

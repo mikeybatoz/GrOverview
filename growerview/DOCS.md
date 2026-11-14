@@ -9,6 +9,19 @@
 
 Setup is never run automatically when the add-on starts. An update does not overwrite a customized connector without using the setup button. An incomplete install is reported rather than silently retried.
 
+## Updating without starting over
+
+1. Keep dosing off and leave **Configuration → dosing_locked** enabled. Create a full Home Assistant backup including **Home Assistant and GrOverview**. The update dialog's app-only backup does not include the journal or photos.
+2. In Home Assistant, open **Settings → Apps → GrOverview** and select **Update**. Older Home Assistant versions call this section **Add-ons**. Updates also appear in **Settings → System → Updates**. If the release is missing, use **Check for updates** on the Apps page.
+3. Once the update finishes, select **Open Web UI → Update connector & check configuration**.
+4. When the configuration check passes, select **Restart Home Assistant**. Wait for the app to verify the loaded release and reopen the journal.
+
+Update the existing installation; there is no need to uninstall, create another journal or re-enter device credentials. The update replaces application/connector code, while keeping plants, care events, photos, sensor history, room/bed assignments, connection settings, pump calibration/limits, saved Veg/Flower recipes and OneDrive account/library preferences. Automatic dosing stays off after the connector restarts; the add-on lock remains enabled.
+
+An app **Auto update** setting downloads the app image only. The connector update and Home Assistant restart above still need to be completed before the new interface opens. If the configuration check fails, setup restores the prior connector and reports the error. **Restore previous connector** restores code, not an older copy of your journal.
+
+For OneDrive journals, keep the same connected account and library. A full HA backup still contains only the local cache plus local settings. Use **Download all & use local storage** first if the backup must contain every offloaded photo and historical reading for offline recovery.
+
 ## Dosing
 
 `dosing_locked` defaults to `true`. Leave it enabled during installation, migration and pump calibration. It blocks arming and running doses through this add-on, including direct switch-on commands to configured pumps. Dose previews, sensor links, sliders, recipe presets, pump configuration and Stop remain accessible.

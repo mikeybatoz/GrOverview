@@ -1,3 +1,10 @@
+# 0.21.2-beta.3
+
+- Fix scheduled OneDrive journal sync running outside Home Assistant's event loop. Background uploads use the existing five-minute schedule and retain unsent records on failure.
+- Document the Home Assistant app update, connector update and restart sequence, including full-backup requirements and OneDrive cache behavior.
+- Keep the journal footer and Home Assistant integration version aligned with the installed app release.
+- Add regression coverage for operational settings and new journal records surviving connector updates and rollback. Keep dosing locked off and retain every beta.2 feature.
+
 # 0.21.2-beta.2
 
 - Put nutrient and pump setup, calibration, reservoir links and connection options in Reservoirs & dosing → Settings. Keep readings, nutrient sliders, Veg/Flower presets and dosing controls on the dashboard.
