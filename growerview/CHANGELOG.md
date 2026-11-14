@@ -1,3 +1,14 @@
+# 0.21.2-beta.1
+
+- Add optional personal OneDrive storage for journal records, photos and complete sensor history, with a bounded local photo/readings cache and retained unsent changes.
+- Add Storage under Options, the settings gear and Diagnostics; include account connection, sync status, recovery and download-to-local controls.
+- Verify uploaded content before evicting local copies, detect conflicting writers and protect rollback to older connectors.
+- Verify Microsoft reports a personal drive before accessing journal folders; reject work/school and unrecognized drive types without writing to them.
+- Load cloud photos and history through the existing charts, exports and Plant Sense review paths.
+- Validate personal Microsoft sign-in, real upload/readback, cache eviction, clean recovery and return to local storage in the isolated PC Supervisor lab. Keep dosing locked off.
+- Handle OneDrive’s escaped folder descriptions and keep recovery choices open during refresh.
+- Keep the full menu accessible when a new installation has an empty journal.
+
 # 0.21.1-beta.4
 
 - Prepare a public installer repository, with the development source kept private.

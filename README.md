@@ -8,7 +8,7 @@ Journal a plant once. Connect it to its room and planter. Keep photos, care even
 
 [![Add GrOverview to Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fmikeybatoz%2FGrOverview)
 
-**Experimental beta · 0.21.1-beta.4 · ARM64 and AMD64 · Home Assistant OS**
+**Experimental beta · 0.21.2-beta.1 · ARM64 and AMD64 · Home Assistant OS**
 
 This is the official installer and support repository. Application development is private. Prebuilt images are downloaded from GitHub Container Registry; Home Assistant does not compile the application on your Pi.
 
@@ -29,6 +29,7 @@ Installation needs Home Assistant OS with Supervisor, Core 2026.11 or newer, and
 | Plant journal | Individual plant records, shared care events, photos, dates and planter history |
 | Room designer | Room and bed placement, equipment, positioned sensors and links back to the journal |
 | Measurements | Automatic recording of linked HA readings, charts, DLI calculations and saved stage comparisons |
+| Optional OneDrive storage | Your personal OneDrive stores journal records, photos and full sensor history; Home Assistant keeps a working cache and unsent changes |
 | AC Infinity | Native Bluetooth discovery and supported controller profiles; requires an HA radio or active proxy |
 | ESPHome and Govee | Use compatible entities already available in Home Assistant |
 | Bluelab | USB receiver selection and automatic reconnection after setup; optional Edenic account connection |
@@ -41,11 +42,12 @@ Installation needs Home Assistant OS with Supervisor, Core 2026.11 or newer, and
 - Existing Home Assistant cameras can be linked. Wyze uses an additional transport service; the portable video setup is still being completed.
 - Plant Sense journal/sensor checks are included. Local image analysis needs a separately configured worker; its model/runtime is not bundled in this beta. Photo results are observations to review, not a confirmed diagnosis.
 - DLI from lux requires a configured conversion factor and is an estimate. Missing readings are not silently treated as zero.
+- OneDrive storage uses a personal Microsoft account and stores the shared installation journal. Device configuration and credentials stay local. For a complete offline journal backup, download the cloud journal first through **Options → Journal storage**.
 - The dosing lock blocks commands through this add-on, including activation of configured pump switches. It does not disable separate Node-RED flows, HA automations, vendor apps or an older panel. Leave dosing off until pump calibration and commissioning are complete.
 
 ## Tested
 
-The public beta was downloaded and installed through the real Home Assistant Supervisor on an isolated development PC. Connector validation, restart and release detection passed; existing journal records and photo bytes were preserved, and dosing stayed locked. Anonymous AMD64/ARM64 downloads were verified, and the published ARM64 payload ran under emulation. Earlier beta tests also covered rollback and full-backup restore. All 19 add-on checks passed before publication. Physical-device and microphone tests are separate.
+Tests use a real Home Assistant Supervisor on an isolated development PC. Connector validation, restart, journal preservation, rollback and full-backup restore have passed, with dosing locked off. OneDrive testing includes personal-account sign-in, verified upload/readback of 1,008 readings and 16 photos, cache eviction, recovery into an empty journal and return to local storage. The release passes 44 add-on tests; physical-device and microphone tests are separate. AMD64 and ARM64 images are provided.
 
 ## Get help
 

@@ -37,6 +37,25 @@ It maps HA's configuration folder read/write solely to manage the connector. `ho
 
 ## Backups and uninstalling
 
+### Optional OneDrive journal storage
+
+Open **GrOverview menu → Options → Journal storage**, or **⚙ Settings → Storage**.
+
+1. Choose **Connect OneDrive in Home Assistant** and finish Microsoft's sign-in. This uses Home Assistant's native OneDrive integration and currently supports **personal Microsoft accounts**, not work/school accounts. GrOverview checks the drive type before creating or accessing journal folders and rejects work/school storage. No password or API key is entered in GrOverview.
+2. Return to **Journal storage → Refresh accounts** and select the account.
+3. Set the local photo cache limit and select **Use OneDrive for this journal**. This authorizes uploading the shared installation's journal, photos, room/planter records and sensor history into that account's Home Assistant app folder.
+4. Wait for a verified sync. Uploads run every five minutes. After verification, HA keeps the working journal metadata, the latest 1,000 readings, the selected photo cache and any unsent changes. Uncached photos and older charts need OneDrive access; local journaling continues during outages. The cache may exceed its limit while offline or while photos are in use.
+
+This is primary journal storage with a local working cache, not a Home Assistant backup destination. Doser configuration, operational settings, secrets, HA Recorder and existing HA backup files stay local. All administrators of the installation share this journal/account; this does not create separate journals for individual HA logins.
+
+Use **Download all & use local storage** before disconnecting OneDrive, downgrading to a version without this feature, or preparing a fully offline journal backup. It downloads the complete history and referenced photos before disabling cloud mode. The OneDrive copy is retained. Ensure sufficient local space for that download. A routine HA backup in cloud mode contains only the local cache and connection configuration, not every offloaded photo/history chunk.
+
+For recovery on a fresh installation, connect the same Microsoft account, open **Recover an existing OneDrive journal → Find my journals**, select the library and restore it. Recovery refuses to replace a journal containing local plants, events or readings. Restart Home Assistant after recovery to reload restored device links. Keep a separate full HA backup for account configuration, operational device settings and credentials. Do not let two live installations write to the same cloud library: conflicting revisions stop sync instead of silently overwriting records.
+
+The PC Supervisor lab verified real personal Microsoft sign-in, upload and readback of 1,008 readings and 16 photos, local cache eviction, recovery into an empty journal and download back to local storage. Automated tests also cover outages, corrupt uploads, conflicting writers and failed local writes. This does not establish production-scale throughput or every account/network condition.
+
+API references: [Home Assistant OneDrive](https://www.home-assistant.io/integrations/onedrive/), [Microsoft app folders](https://learn.microsoft.com/en-us/graph/onedrive-sharepoint-appfolder), [file upload](https://learn.microsoft.com/en-us/graph/api/driveitem-put-content), [conditional metadata updates](https://learn.microsoft.com/en-us/graph/api/driveitem-update).
+
 Use a full Home Assistant backup including **Home Assistant and GrOverview**. The connector's existing SQLite backup hooks remain bundled. An add-on-only backup contains installer state and rollback copies, not the journal or photos in HA's configuration directory.
 
 Uninstalling the add-on does not erase journal records or remove the connector. Removing the connector is a separate administrative action; first stop relevant automations and retain a verified full backup.
