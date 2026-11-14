@@ -1,0 +1,45 @@
+GrOverview Personal and Internal Use License 1.0
+Copyright (c) 2026 GrOverview authors. All rights reserved.
+
+1. Permission to use
+The copyright holders grant you a non-exclusive, worldwide, royalty-free
+license to download, install and run official GrOverview releases on Home
+Assistant systems that you own or administer, for your personal or internal
+organizational use. You may make backup copies and private modifications for
+that use. You retain ownership of your journal records and other user data.
+
+2. Restrictions
+Except for the permissions above, or rights that cannot be excluded under
+applicable law, no permission is granted to distribute, sublicense, sell,
+rebrand, publish, or offer GrOverview or its original code as a hosted service
+to third parties. This includes modified versions and incorporating the
+original code into other products. Written permission from the copyright
+holders is required for those uses. Do not remove copyright or license notices.
+You may share links to the official download and installation pages.
+
+3. Third-party materials
+This license applies only to original GrOverview material whose copyright
+holders have authorized it. Third-party software, adapted portions, datasets,
+documentation, trademarks and other materials remain governed by their own
+licenses and terms. Their notices are retained in THIRD-PARTY.md, in the
+distributed files and in installed package metadata. This license does not
+restrict rights granted by those third-party licenses. It does not grant
+ownership of third-party work or of the Home Assistant name or marks.
+
+4. Hosting-platform rights
+Nothing here overrides rights necessarily granted by the terms of the hosting
+platform for materials intentionally published there. Public visibility does
+not grant additional permission to redistribute or commercially exploit the
+original application code. This is not an open-source license.
+
+5. No warranty
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE AUTHORS AND
+COPYRIGHT HOLDERS ARE NOT LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR ITS USE.
+
+6. Permission requests
+Contact the maintainer through the official GrOverview GitHub repository for
+distribution, resale, hosted-service or other licensing permission.
