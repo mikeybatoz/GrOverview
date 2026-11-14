@@ -4,6 +4,8 @@
 
 Journal a plant once. Connect it to its room and planter. Keep photos, care events and sensor history together.
 
+**Built by mikeybatoz with extensive assistance from OpenAI Codex.** The foundation was mikeybatoz's existing Home Assistant growing system, AC Infinity reverse-engineering work, Bluelab data collection and BLE6 Node-RED dosing workflows. Codex helped turn that established work and the owner's requirements into this application through code implementation, refactoring, documentation and testing. Third-party projects retain their own credit and licenses.
+
 [![Add GrOverview to Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fmikeybatoz%2FGrOverview)
 
 **Experimental beta · 0.21.1-beta.4 · ARM64 and AMD64 · Home Assistant OS**
