@@ -4,16 +4,16 @@
 
 Journal a plant once. Connect it to its room and planter. Keep photos, care events and sensor history together.
 
-[![Add GrOverview to Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fmikeybatoz%2FGrOverview)
+**Download activation pending.** The beta images have been built and tested. The installation button will appear after public image downloads are enabled and verified. This repository currently contains documentation only; no installable app is advertised yet.
 
 **Experimental beta · 0.21.1-beta.4 · ARM64 and AMD64 · Home Assistant OS**
 
 This is the official installer and support repository. Application development is private. Prebuilt images are downloaded from GitHub Container Registry; Home Assistant does not compile the application on your Pi.
 
-## Install
+## Installation once downloads are available
 
 1. Make a full Home Assistant backup.
-2. Click **Add GrOverview to Home Assistant** above. Alternatively open **Settings → Apps → Install app → ⋮ → Repositories** and add `https://github.com/mikeybatoz/GrOverview`. Older HA versions call this **Add-ons → Add-on Store**.
+2. Use the **Add GrOverview to Home Assistant** button when it appears here. Alternatively open **Settings → Apps → Install app → ⋮ → Repositories** and add `https://github.com/mikeybatoz/GrOverview`. Older HA versions call this **Add-ons → Add-on Store**.
 3. Find **GrOverview**, select **Install**, then **Start** and **Open Web UI**.
 4. Select **Install connector & check configuration**, then **Restart Home Assistant** when the check passes. The included connector supplies HA entities, Bluetooth/USB access and recording. No HACS installation is needed.
 5. Leave **dosing_locked** enabled. Add your rooms, link sensors and assign plants to their planters.
