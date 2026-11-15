@@ -6,7 +6,9 @@ Journal a plant once. Connect it to its room and planter. Keep photos, care even
 
 **Built by mikeybatoz with extensive assistance from OpenAI Codex.** The foundation was mikeybatoz's existing Home Assistant growing system, AC Infinity reverse-engineering work, Bluelab data collection and BLE6 Node-RED dosing workflows. Codex helped turn that established work and the owner's requirements into this application through code implementation, refactoring, documentation and testing. Third-party projects retain their own credit and licenses.
 
-[![Add GrOverview to Home Assistant](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fmikeybatoz%2FGrOverview)
+[![Install GrOverview in Home Assistant](https://my.home-assistant.io/badges/supervisor_app.svg)](https://my.home-assistant.io/redirect/supervisor_app/?app=572737a2_growerview&repository_url=https%3A%2F%2Fgithub.com%2Fmikeybatoz%2FGrOverview)
+
+[Install GrOverview](https://my.home-assistant.io/redirect/supervisor_app/?app=572737a2_growerview&repository_url=https%3A%2F%2Fgithub.com%2Fmikeybatoz%2FGrOverview) · [Add the repository only](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fmikeybatoz%2FGrOverview)
 
 **Experimental beta · 0.21.2-beta.3 · ARM64 and AMD64 · Home Assistant OS**
 
@@ -15,12 +17,14 @@ This is the official installer and support repository. Application development i
 ## Install
 
 1. Make a full Home Assistant backup.
-2. Click **Add GrOverview to Home Assistant** above. Alternatively open **Settings → Apps → Install app → ⋮ → Repositories** and add `https://github.com/mikeybatoz/GrOverview`. Older HA versions call this **Add-ons → Add-on Store**.
-3. Find **GrOverview**, select **Install**, then **Start** and **Open Web UI**.
+2. Click **Install GrOverview** above. If My Home Assistant asks, enter your own Home Assistant address. Confirm adding the GrOverview repository if prompted.
+3. On the **GrOverview** app page, select **Install**, then **Start** and **Open Web UI**. The link opens its page; it does not install or restart anything without your action.
 4. Select **Install connector & check configuration**, then **Restart Home Assistant** when the check passes. The included connector supplies HA entities, Bluetooth/USB access and recording. No HACS installation is needed.
 5. Leave **dosing_locked** enabled. Add your rooms, link sensors and assign plants to their planters.
 
 Installation needs Home Assistant OS with Supervisor, Core 2026.11 or newer, and an administrator account. Home Assistant Container alone has no add-on store. Read [setup, backup and migration details](growerview/DOCS.md) before upgrading an existing installation.
+
+**Manual fallback:** use [Add the repository only](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fmikeybatoz%2FGrOverview), or open **Settings → Apps → Install app → ⋮ → Repositories** and add `https://github.com/mikeybatoz/GrOverview`. Then find **GrOverview** and select **Install**. Older HA versions call this **Add-ons → Add-on Store**. If My Home Assistant opens the wrong server, change the instance address at [my.home-assistant.io](https://my.home-assistant.io/).
 
 ## Update an existing installation
 

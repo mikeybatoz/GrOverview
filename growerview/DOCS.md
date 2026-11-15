@@ -1,6 +1,6 @@
 # Setup
 
-1. Install the GrOverview add-on in Home Assistant OS. ARM64 and AMD64 are the declared target architectures.
+1. Make a full Home Assistant backup, then [open GrOverview in Home Assistant](https://my.home-assistant.io/redirect/supervisor_app/?app=572737a2_growerview&repository_url=https%3A%2F%2Fgithub.com%2Fmikeybatoz%2FGrOverview). Enter your own Home Assistant address if asked, confirm adding the repository if prompted, and select **Install** on the GrOverview page. Requires Home Assistant OS with Supervisor; ARM64 and AMD64 are supported.
 2. Start it and select **Open Web UI** while signed in as a Home Assistant administrator.
 3. Select **Install connector & check configuration**. For an existing installation this reads **Update connector & check configuration**.
 4. Setup preserves the prior connector and `configuration.yaml` in the add-on's private `/data/releases` folder. It adds `grow_journal:` only if the top-level configuration does not already contain it. Comments, `!secret` and `!include` entries are preserved.
@@ -8,6 +8,8 @@
 6. The page verifies the running connector's release and opens the app. Enable **Show in sidebar** on the add-on page if desired.
 
 Setup is never run automatically when the add-on starts. An update does not overwrite a customized connector without using the setup button. An incomplete install is reported rather than silently retried.
+
+If the direct link does not open the app page, [add the GrOverview repository](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fmikeybatoz%2FGrOverview), then find **GrOverview** under **Settings → Apps → Install app**. To add it manually, open that page's **⋮ → Repositories** and enter `https://github.com/mikeybatoz/GrOverview`. Older versions call these **Add-ons → Add-on Store**. If a link opens the wrong server, update the instance address at [My Home Assistant](https://my.home-assistant.io/).
 
 ## Updating without starting over
 
