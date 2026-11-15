@@ -1,3 +1,12 @@
+# 0.21.2-beta.4
+
+- Add API-key-only Govee setup under the Govee page's settings gear. The form skips optional account sign-in and reports setup errors without erasing the entered key. It uses the separately installed Govee Cloud Integration; existing BLE readings remain independent.
+- Move page-specific connection and discovery controls into the settings gear. Hide Govee devices without available readings or controls while retaining their saved links and history.
+- Require confirmation before clearing a recorded leak incident, and reject stale confirmations or clearing an entity that still reports wet. Connecting Govee does not run alarm or notification tests.
+- Add per-plant camera journal support with tag/trunk association, individual crops, duplicate prevention and diagnostics for unreadable or ambiguous tags. A configured camera transport and compatible local vision worker are still required.
+- Add selectable camera-meter regions and dated visual readings linked to rooms and planters. Preserve their source photos in journal storage, including OneDrive.
+- Retain all reservoir controls, calibration, recipes and the default dosing lock. Connector updates preserve existing journal records and settings.
+
 # 0.21.2-beta.3
 
 - Fix scheduled OneDrive journal sync running outside Home Assistant's event loop. Background uploads use the existing five-minute schedule and retain unsent records on failure.

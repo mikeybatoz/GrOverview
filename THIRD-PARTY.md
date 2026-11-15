@@ -4,6 +4,7 @@ The application includes its existing attribution and source links. The release 
 
 - JSZip: bundled frontend vendor library, MIT option selected from its dual license. See `notices/JSZip-LICENSE.txt`.
 - Edenic endpoint implementation reference: `farm-urban/fufarm_ha_edenic`. The existing MIT notice is retained at `notices/EDENIC-NOTICE.txt`.
+- Govee cloud protocol reference: `lasswellt/govee-homeassistant` v2026.11.0 (MIT). The notice is retained at `notices/GOVEE-NOTICES.txt`. The current API-key setup uses that separately installed Home Assistant integration; existing Bluetooth sensor support is independent. Earlier native protocol helpers remain for compatibility. `aiomqtt` (BSD-3-Clause) is installed by Home Assistant from its published distribution.
 - `ac-infinity-ble` (MIT), `pypdf` (BSD-3-Clause), `pyserial` (BSD): declared Python dependencies of the HA connector. Installed by HA, not vendored into this repository; their distributions retain their license metadata.
 - AC Infinity protocol references include Viss/ha-ac-infinity-ble (MIT) and hunterjm/ac-infinity-ble (MIT). Their notices are included in `notices/AC-INFINITY-NOTICES.txt`; any adapted portions remain under those licenses.
 - `aiohttp` (Apache-2.0 and MIT) and PyYAML (MIT): container dependencies, installed from their published packages with license metadata.

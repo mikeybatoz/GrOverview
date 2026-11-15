@@ -10,7 +10,7 @@ Journal a plant once. Connect it to its room and planter. Keep photos, care even
 
 [Install GrOverview](https://my.home-assistant.io/redirect/supervisor_app/?app=572737a2_growerview&repository_url=https%3A%2F%2Fgithub.com%2Fmikeybatoz%2FGrOverview) · [Add the repository only](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fmikeybatoz%2FGrOverview)
 
-**Experimental beta · 0.21.2-beta.3 · ARM64 and AMD64 · Home Assistant OS**
+**Experimental beta · 0.21.2-beta.4 · ARM64 and AMD64 · Home Assistant OS**
 
 This is the official installer and support repository. Application development is private. Prebuilt images are downloaded from GitHub Container Registry; Home Assistant does not compile the application on your Pi.
 
@@ -45,8 +45,8 @@ Your existing journal, photos, sensor history, room/bed links, device settings, 
 | Optional OneDrive storage | Your personal OneDrive stores journal records, photos and full sensor history; Home Assistant keeps a working cache and unsent changes |
 | AC Infinity | Native Bluetooth discovery and supported controller profiles; requires an HA radio or active proxy |
 | ESPHome sensors | Link compatible Home Assistant entities to rooms, planters and sensor history |
-| Govee sensors and leak alerts | Compatible sensor links; H5054 reports through supported MQTT/RF receivers, with battery reports when supplied and selectable phone notifications |
-| Wyze and other cameras | Camera assignment, snapshots and dated reviews using configured camera transport; see dependencies below |
+| Govee sensors and leak alerts | API-key-only setup through the separately installed Govee Cloud Integration; compatible BLE sensors, MQTT/RF receivers, confirmed leak clearing and selectable phone notifications |
+| Wyze and other cameras | Camera assignment, per-plant snapshots, tag/crop diagnostics and visual meter regions using configured camera transport and a compatible vision worker; see dependencies below |
 | Sonoff and Broadlink | Existing device connections, RF detector mapping, model-based mini-split profiles and guided IR learning |
 | Bluelab | USB receiver selection and automatic reconnection after setup; optional Edenic account connection |
 | Reservoirs | Custom nutrients and pumps in Settings; nutrient sliders, Veg/Flower presets, calibration and dosing controls behind a default-on dosing lock |
@@ -55,6 +55,7 @@ Your existing journal, photos, sensor history, room/bed links, device settings, 
 ## Beta boundaries
 
 - Physical hardware support depends on model, firmware, radio/USB availability and configuration. A detected device is not proof that every control is supported.
+- Govee cloud setup requires the [Govee Cloud Integration](https://github.com/lasswellt/govee-homeassistant) in Home Assistant. In GrOverview, open **Govee setup & devices → ⚙ Settings → Govee API key**. Supported leak events use the key alone; no Govee account password is requested. BLE sensors keep their existing connections. Battery data is shown only when a supported source supplies it; API-only leak detectors may not provide battery levels. Live alarm delivery still needs a separately chosen detector and notification setup.
 - Existing Home Assistant cameras can be linked. Wyze uses an additional transport service; the portable video setup is still being completed.
 - Plant Sense journal/sensor checks are included. Local image analysis needs a separately configured worker; its model/runtime is not bundled in this beta. Photo results are observations to review, not a confirmed diagnosis.
 - DLI from lux requires a configured conversion factor and is an estimate. Missing readings are not silently treated as zero.
@@ -63,7 +64,7 @@ Your existing journal, photos, sensor history, room/bed links, device settings, 
 
 ## Tested
 
-The current release passes 409 journal tests and 48 add-on tests (cloud cases overlap), including scheduled cloud-sync dispatch and settings preservation through updates/rollback. Published beta.1 → beta.2 → beta.3 updates were exercised through Home Assistant on an isolated PC: 35 journal events, 1,008 readings, 16 photo hashes, room/bed links, pump settings, Veg/Flower recipes and OneDrive preferences matched afterward. Earlier releases passed full-backup restore and OneDrive recovery into an empty journal. These tests do not establish compatibility with every physical device. AMD64 and ARM64 images are provided.
+The current release passes 447 journal tests and 48 add-on tests (cloud cases overlap), including camera association, confirmed leak clearing, scheduled cloud sync and settings preservation through updates/rollback. The API-key-only setup flow also has automated frontend checks. Published beta.1 → beta.2 → beta.3 updates were previously exercised through Home Assistant on an isolated PC: 35 journal events, 1,008 readings, 16 photo hashes, room/bed links, pump settings, Veg/Flower recipes and OneDrive preferences matched afterward. Those earlier live-update and recovery checks are historical evidence, not a new beta.4 Supervisor recovery test. These tests do not establish compatibility with every physical device. AMD64 and ARM64 images are provided.
 
 ## Get help
 
