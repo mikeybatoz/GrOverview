@@ -30,9 +30,15 @@ For OneDrive journals, keep the same connected account and library. A full HA ba
 
 The lock does not control independent HA automations or Node-RED. A connector upgrade refuses to proceed if its dosing engine reports an active job or enabled reservoir. No setup operation runs pumps.
 
+Fixed doses use the saved mL amount divided by each pump's calibrated mL/s. Reservoir volume is used for batch-recipe scaling, and is optional for those fixed doses. A water-level sensor is optional; linking one enables its freshness and safe-state checks. Device-side cutoff confirmation is an optional record. Per-dose, runtime and daily limits can be left blank or configured individually.
+
+The BLE6-compatible default checks pH/PPM every 600 seconds and accepts measurements up to 300 seconds old. Extra sustained-demand time and mixing waits default to zero. These settings are under **Reservoir settings → Timing & freshness**. Native jobs run pumps sequentially, prioritize configured pH correction, and never resume after a restart. BLE6's simultaneous branches are not reproduced. Valid readings, saved thresholds, calibrated pump mappings, available outputs and the absence of known competing pump automations remain required. PPM preset-button automations are not treated as pump controllers.
+
 In **Reservoirs & dosing**, open **⚙ Settings**, then **Nutrients & pumps** for a reservoir. Add only the pumps you own, enter any product name (brand and line are optional), and assign each pump's on/off switch. Choose **Use in recipe** to include or exclude a pump; the arrow buttons set its mixing order. Removed pumps can be restored from **⚙ Settings → Removed pumps**.
 
 Use the nutrient sliders and **Veg / Flower** buttons to save your own amounts. Product selection, pump connections, order, calibration and Bluelab setup live in **⚙ Settings**; the dashboard keeps the daily controls. Replacing a product, changing its purpose, moving it to another reservoir or restoring it clears that pump's previous amounts and commissioning confirmation. Changing its switch also clears the calibration rate and shutoff confirmation. These edits keep automatic dosing off; excluded pumps are omitted from previews and execution. Existing journal history is retained.
+
+Click the reservoir's **water temperature** to toggle °C/°F. Click its **nutrient concentration** to cycle EC (mS/cm), ppm500 and ppm700. Display choices save per reservoir and do not change the sensor's source scale, dosing thresholds, pump amounts or operating state. Threshold controls continue to show their configured dosing scale.
 
 ## Existing installations
 
@@ -92,6 +98,16 @@ Uninstalling the add-on does not erase journal records or remove the connector. 
 This package preserves existing integrations. It does not bundle a vision model, the Windows Plant Sense worker, Wyze Bridge or a video transport process. Existing configured services remain usable through the connector, but a fresh user's camera transport and local AI need their own portable setup work before a complete public release. This beta does not claim those external components are automatically installed.
 
 Camera/entity dialogs use the parent Home Assistant frontend when opened through ingress. Standalone browser testing shows an entity-information fallback. Voice input still requires browser microphone permission and an HTTPS Home Assistant session.
+
+## Cloud storage and optional local AI
+
+Open **Menu → Options → Cloud & storage**. Choose **Connect Google Drive** or **Connect OneDrive**, complete the Home Assistant sign-in, then use **Refresh accounts** and **Verify selected account** to check the owner before enabling storage. Google Drive's first setup requires your own OAuth client credentials; follow the linked Home Assistant instructions. A connected Google Drive backup add-on is not, by itself, a GrOverview journal connection.
+
+Cloud storage holds journal records, photos and measurement history. Home Assistant retains current records, the newest 1,000 readings, a bounded photo cache and unsent changes. Uploads are verified before history and cached photos are removed locally. Sync runs every five minutes; an outage retains changes locally and retries. An empty installation can recover its library from the same account. Credentials, device control configuration and doser settings remain on Home Assistant and still need a Home Assistant backup.
+
+GrOverview is **cloud-backed**, with its application and monitoring running in Home Assistant. Google Drive does not execute AI or Home Assistant. AI photo assessment is optional and requires a deliberately connected image-capable provider. No user's computer is discovered or enrolled as an AI worker automatically. Sensor/journal checks and saved camera snapshots continue if a chosen AI computer is asleep; queued assessments retry when it returns.
+
+For the optional Windows worker, background mode uses four CPU threads and no GPU by default. This leaves graphics memory available for the user's applications. Photos may take several minutes; the worker and Home Assistant allow a matching, bounded processing window. GPU mode is an explicit worker configuration choice. Image findings remain observations for review, not confirmed diagnoses or automatic dosing instructions.
 
 ## Help
 

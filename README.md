@@ -10,7 +10,7 @@ Journal a plant once. Connect it to its room and planter. Keep photos, care even
 
 [Install GrOverview](https://my.home-assistant.io/redirect/supervisor_app/?app=572737a2_growerview&repository_url=https%3A%2F%2Fgithub.com%2Fmikeybatoz%2FGrOverview) · [Add the repository only](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fmikeybatoz%2FGrOverview)
 
-**Experimental beta · 0.21.2-beta.4 · ARM64 and AMD64 · Home Assistant OS**
+**Experimental beta · 0.21.2-beta.5 · ARM64 and AMD64 · Home Assistant OS**
 
 This is the official installer and support repository. Application development is private. Prebuilt images are downloaded from GitHub Container Registry; Home Assistant does not compile the application on your Pi.
 
@@ -33,7 +33,7 @@ Installation needs Home Assistant OS with Supervisor, Core 2026.11 or newer, and
 3. Select **Open Web UI → Update connector & check configuration**.
 4. After the check passes, select **Restart Home Assistant** and wait for the journal to reopen.
 
-Your existing journal, photos, sensor history, room/bed links, device settings, pump calibrations and saved recipes stay in place. Do not uninstall or create a new journal. App auto-updates still require the connector/restart step. OneDrive journals retain their account/library; a fully offline backup requires downloading the cloud journal first. See [update and backup details](growerview/DOCS.md#updating-without-starting-over).
+Your existing journal, photos, sensor history, room/bed links, device settings, pump calibrations and saved recipes stay in place. Do not uninstall or create a new journal. App auto-updates still require the connector/restart step. Cloud journals retain their account/library; a fully offline backup requires downloading the cloud journal first. See [update and backup details](growerview/DOCS.md#updating-without-starting-over).
 
 ## What is included
 
@@ -42,7 +42,7 @@ Your existing journal, photos, sensor history, room/bed links, device settings, 
 | Plant journal | Individual plant records, shared care events, photos, dates and planter history |
 | Room designer | Room and bed placement, equipment, positioned sensors and links back to the journal |
 | Measurements | Automatic recording of linked HA readings, charts, DLI calculations and saved stage comparisons |
-| Optional OneDrive storage | Your personal OneDrive stores journal records, photos and full sensor history; Home Assistant keeps a working cache and unsent changes |
+| Optional cloud storage | Google Drive or personal OneDrive stores journal records, photos and sensor history; Home Assistant keeps a working cache and unsent changes |
 | AC Infinity | Native Bluetooth discovery and supported controller profiles; requires an HA radio or active proxy |
 | ESPHome sensors | Link compatible Home Assistant entities to rooms, planters and sensor history |
 | Govee sensors and leak alerts | API-key-only setup through the separately installed Govee Cloud Integration; compatible BLE sensors, MQTT/RF receivers, confirmed leak clearing and selectable phone notifications |
@@ -59,12 +59,12 @@ Your existing journal, photos, sensor history, room/bed links, device settings, 
 - Existing Home Assistant cameras can be linked. Wyze uses an additional transport service; the portable video setup is still being completed.
 - Plant Sense journal/sensor checks are included. Local image analysis needs a separately configured worker; its model/runtime is not bundled in this beta. Photo results are observations to review, not a confirmed diagnosis.
 - DLI from lux requires a configured conversion factor and is an estimate. Missing readings are not silently treated as zero.
-- OneDrive storage uses a personal Microsoft account and stores the shared installation journal. Device configuration and credentials stay local. For a complete offline journal backup, download the cloud journal first through **Options → Journal storage**.
+- Cloud storage uses a connected Google Drive or personal Microsoft OneDrive account and stores the shared installation journal. Google Drive requires Home Assistant OAuth setup; a backup add-on connection alone does not configure a GrOverview journal. Device configuration and credentials stay local. For a complete offline journal backup, download the cloud journal first through **Options → Journal storage**.
 - The dosing lock blocks commands through this add-on, including activation of configured pump switches. It does not disable separate Node-RED flows, HA automations, vendor apps or an older panel. Leave dosing off until pump calibration and commissioning are complete.
 
 ## Tested
 
-The current release passes 447 journal tests and 48 add-on tests (cloud cases overlap), including camera association, confirmed leak clearing, scheduled cloud sync and settings preservation through updates/rollback. The API-key-only setup flow also has automated frontend checks. Published beta.1 → beta.2 → beta.3 updates were previously exercised through Home Assistant on an isolated PC: 35 journal events, 1,008 readings, 16 photo hashes, room/bed links, pump settings, Veg/Flower recipes and OneDrive preferences matched afterward. Those earlier live-update and recovery checks are historical evidence, not a new beta.4 Supervisor recovery test. These tests do not establish compatibility with every physical device. AMD64 and ARM64 images are provided.
+The current release passes 500 journal tests and 51 add-on tests (cloud cases overlap), including camera association, confirmed leak clearing, scheduled cloud sync and settings preservation through updates/rollback. API-key-only setup and reservoir unit conversions also have automated frontend checks. Live reservoir clicks and reload persistence were verified with dosing off; recorded limits, pump settings and recipes matched before and after. Published beta.1 → beta.2 → beta.3 updates were previously exercised through Home Assistant on an isolated PC: 35 journal events, 1,008 readings, 16 photo hashes, room/bed links, pump settings, Veg/Flower recipes and OneDrive preferences matched afterward. Those earlier live-update and recovery checks are historical evidence, not a new beta.5 Supervisor recovery test. These tests do not establish compatibility with every physical device. AMD64 and ARM64 images are provided.
 
 ## Get help
 

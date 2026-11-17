@@ -1,3 +1,19 @@
+# 0.21.2-beta.5
+
+- Add optional Google Drive journal storage alongside OneDrive, with account verification, upload progress and bounded local caches. Home Assistant still runs the app and retains device settings and credentials.
+- Schedule camera captures independently of AI processing, defaulting to eight-hour snapshots. Prioritize newly uploaded photos and retry deferred assessments when the configured vision worker is available.
+- Allow a longer bounded processing window for optional local image analysis while keeping journal and sensor monitoring responsive. Image analysis still requires a separately configured worker.
+- Tap reservoir water temperature to switch °C/°F, or nutrient concentration to cycle EC, ppm500 and ppm700. Save display choices per reservoir across reloads and restarts, independently of dosing limits, recipes and pump operation.
+- Request active Bluetooth scan responses for saved AC Infinity controllers, and retain verified identities across name-only advertisements without refreshing old measurements. Release scan requests when profiles are disabled or unloaded.
+- Load the AC Infinity inventory immediately when reopening its page instead of showing an empty grid until the periodic refresh.
+- Refresh saved outlet-controller settings when live port data arrives even if no climate probe is attached.
+- Show Enable dosing when off and Stop dosing when enabled or running, including mixing waits. Show rejected activation errors and refresh status without erasing edits.
+- Autosave live nutrient amounts, pH/PPM limits and separate Veg/Flower profiles. Acknowledge a save only after durable storage; retain failed drafts for retry after reload. Changing recipes leaves automatic dosing off.
+- Match BLE6's 600-second periodic check and five-minute Bluelab freshness window. Extra sustained-demand and mixing waits default to zero; preserve custom timing during migration.
+- Remove mandatory reservoir volume, water-level input, device-side cutoff confirmation and manual exclusivity checkbox from fixed-dose setup. Optional linked level sensors remain enforced. Dose/runtime/daily limits are optional; only known uncommissioned import defaults are cleared.
+- Keep PPM preset automations out of competing-pump detection, exclude unmapped imported Silica/Boost channels until configured, and allow pH correction independently of high PPM. Preserve mappings, quantities, presets and history. Native delivery remains sequential and dosing stays off after migration.
+- Keep scheduled sensor checks and camera capture running while a local AI assessment is pending.
+
 # 0.21.2-beta.4
 
 - Add API-key-only Govee setup under the Govee page's settings gear. The form skips optional account sign-in and reports setup errors without erasing the entered key. It uses the separately installed Govee Cloud Integration; existing BLE readings remain independent.
